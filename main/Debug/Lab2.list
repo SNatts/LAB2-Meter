@@ -21,29 +21,29 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   8 .data         0000000c  20000000  080031b8  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000134  2000000c  080031c4  0002000c  2**2
+  9 .bss          0000015c  2000000c  080031c4  0002000c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  20000140  080031c4  00020140  2**0
+ 10 ._user_heap_stack 00000600  20000168  080031c4  00020168  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000a90c  00000000  00000000  0002003c  2**0
+ 12 .debug_info   0000a8f0  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 000019f5  00000000  00000000  0002a948  2**0
+ 13 .debug_abbrev 000019f5  00000000  00000000  0002a92c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000840  00000000  00000000  0002c340  2**3
+ 14 .debug_aranges 00000840  00000000  00000000  0002c328  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000007a8  00000000  00000000  0002cb80  2**3
+ 15 .debug_ranges 000007a8  00000000  00000000  0002cb68  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00015efe  00000000  00000000  0002d328  2**0
+ 16 .debug_macro  00015efe  00000000  00000000  0002d310  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a76b  00000000  00000000  00043226  2**0
+ 17 .debug_line   0000a76b  00000000  00000000  0004320e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008da58  00000000  00000000  0004d991  2**0
+ 18 .debug_str    0008da58  00000000  00000000  0004d979  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000db3e9  2**0
+ 19 .comment      00000050  00000000  00000000  000db3d1  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002108  00000000  00000000  000db43c  2**2
+ 20 .debug_frame  00002108  00000000  00000000  000db424  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1579,7 +1579,7 @@ LoopFillZerobss:
   ldr r2, =_sbss
  8000ae8:	2000000c 	.word	0x2000000c
   ldr r4, =_ebss
- 8000aec:	20000140 	.word	0x20000140
+ 8000aec:	20000168 	.word	0x20000168
 
 08000af0 <DMA1_Stream0_IRQHandler>:
  * @retval None       
@@ -1742,7 +1742,7 @@ __weak void HAL_IncTick(void)
  8000bb4:	4770      	bx	lr
  8000bb6:	bf00      	nop
  8000bb8:	20000008 	.word	0x20000008
- 8000bbc:	2000013c 	.word	0x2000013c
+ 8000bbc:	20000164 	.word	0x20000164
 
 08000bc0 <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other 
@@ -1762,7 +1762,7 @@ __weak uint32_t HAL_GetTick(void)
  8000bcc:	f85d 7b04 	ldr.w	r7, [sp], #4
  8000bd0:	4770      	bx	lr
  8000bd2:	bf00      	nop
- 8000bd4:	2000013c 	.word	0x2000013c
+ 8000bd4:	20000164 	.word	0x20000164
 
 08000bd8 <HAL_ADC_Init>:
   * @param  hadc pointer to a ADC_HandleTypeDef structure that contains

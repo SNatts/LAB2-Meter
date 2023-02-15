@@ -51,10 +51,10 @@ typedef union
 		uint16_t ADC_IN0;
 		uint16_t TempSensor;
 	}subData;
-	uint16_t buffer[2];
 }DMA_ADC_BufferType;
 
 DMA_ADC_BufferType buffer[10];
+uint16_t Volt_mV = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,7 +115,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)buffer, 200);
-  }
+	  static uint32_t timestamp=0;
+	  if(HAL_GetTick()>= timestamp){
+		  timestamp =HAL_GetTick() +1000;
+	  }
   /* USER CODE END 3 */
 }
 
