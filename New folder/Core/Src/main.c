@@ -115,8 +115,8 @@ int main(void)
 			  SumVoltADC += buffer[i*2];
 			  SumTempADC += buffer[(i*2)+1];
 		  }
-		  VoltmV = ((SumVoltADC/10)*(3300.0/4096.0))*2.0;
-		  TempK = ((((SumTempADC/10)*(3300.0/4096.0))-760)/2.5)+25+273.15;
+		  VoltmV = ((SumVoltADC/10.0)*(3300.0/4096.0))*2.0;
+		  TempK = ((((SumTempADC/10.0)*(3300.0/4096.0))-760)/2.5)+25.0+273.15;
 		  SumVoltADC = 0;
 		  SumTempADC = 0;
 	  }
