@@ -115,8 +115,8 @@ int main(void)
 			  SumVoltADC += buffer[i*2];
 			  SumTempADC += buffer[(i*2)+1];
 		  }
-		  VoltmV = (SumVoltADC/10)*(5000/4096);
-		  TempK = ((((SumTempADC/10)*(3300/4096))-7.6)/2.5)+25+273.15;
+		  VoltmV = ((SumVoltADC/10)*(3300.0/4096.0))*2.0;
+		  TempK = ((((SumTempADC/10)*(3300.0/4096.0))-760)/2.5)+25+273.15;
 		  SumVoltADC = 0;
 		  SumTempADC = 0;
 	  }
@@ -211,7 +211,7 @@ static void MX_ADC1_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_56CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
